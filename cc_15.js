@@ -67,3 +67,11 @@ increaseRiskLevelsButton.addEventListener("click", () => {
         card.className = `riskCard ${newLevel.toLowerCase()}`;
     });
 });
+// Task 6: Handling Event Propagation
+riskDashboard.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        event.stopPropagation();
+        const riskCard = event.target.closest(".riskCard");
+        riskDashboard.removeChild(riskCard);
+    }
+});
