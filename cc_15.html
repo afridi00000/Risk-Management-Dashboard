@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        main {
+            padding: 20px;
+        }
+        #riskDashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .riskCard {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .riskCard h3, .riskCard p {
+            margin: 0 0 10px;
+        }
+        .riskCard button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .riskCard button:hover {
+            background-color: #cc0000;
+        }
+        .riskCard.low {
+            background-color: #e6ffe6;
+        }
+        .riskCard.medium {
+            background-color: #ffffe6;
+        }
+        .riskCard.high {
+            background-color: #ffe6e6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Risk Management Dashboard</h1>
+    </header>
+    <main>
+        <div id="riskDashboard"></div>
+        <form id="riskForm">
+            <input type="text" id="riskName" placeholder="Risk Name" required>
+            <select id="riskLevel" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <input type="text" id="department" placeholder="Department" required>
+            <button type="submit">Add Risk</button>
+        </form>
+        <button id="increaseRiskLevels">Increase Risk Levels</button>
+    </main>
+    <footer>
+        <p>&copy; 2023 Risk Management Dashboard</p>
+    </footer>
+    <script src="cc_15.js"></script>
+</body>
+</html>
