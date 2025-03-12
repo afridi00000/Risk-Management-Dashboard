@@ -40,3 +40,10 @@ riskForm.addEventListener("submit", (event) => {
 // Add sample risks
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+// Task 3: Removing Risk Items
+riskDashboard.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        const riskCard = event.target.closest(".riskCard");
+        riskDashboard.removeChild(riskCard);
+    }
+});
