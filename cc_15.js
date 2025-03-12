@@ -47,3 +47,23 @@ riskDashboard.addEventListener("click", (event) => {
         riskDashboard.removeChild(riskCard);
     }
 });
+// Task 5: Implementing Bulk Updates
+const increaseRiskLevelsButton = document.getElementById("increaseRiskLevels");
+
+increaseRiskLevelsButton.addEventListener("click", () => {
+    const riskCards = document.querySelectorAll(".riskCard");
+    riskCards.forEach(card => {
+        const levelElement = card.querySelector("p");
+        const currentLevel = levelElement.textContent.replace("Risk Level: ", "");
+        let newLevel;
+        if (currentLevel === "Low") {
+            newLevel = "Medium";
+        } else if (currentLevel === "Medium") {
+            newLevel = "High";
+        } else {
+            newLevel = "High";
+        }
+        levelElement.textContent = `Risk Level: ${newLevel}`;
+        card.className = `riskCard ${newLevel.toLowerCase()}`;
+    });
+});
